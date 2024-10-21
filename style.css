@@ -1,183 +1,259 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1b1b1b;
-    color: #f5f5f5;
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
+}
+body 
+{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background: #000;
+	position: relative;
+	z-index: 1;
+}
+
+section 
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+	flex-wrap: wrap;
+	overflow: hidden;
+	z-index: -1; /* Mantém a section ao fundo */
+}
+
+section::before 
+{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#000, #BB9469, #000);
+	animation: animate 5s linear infinite;
+}
+
+@keyframes animate 
+{
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(100%);
+	}
+}
+
+section span 
+{
+	position: relative;
+	display: block;
+	width: calc(6.25vw - 2px);
+	height: calc(6.25vw - 2px);
+	background: #181818;
+	z-index: 2;
+	transition: 1.5s;
+}
+
+section span:hover 
+{
+	background: #BB9469;
+	transition: 0s;
 }
 
 header {
-    background-color: #282c34;
-    text-align: center;
-    position: relative;
+	background-color: #282c34;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	width: 100%;
 }
 
 header img {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    color: #f5f5f5;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	position: relative;
+	z-index: 1;
 }
 
 .about {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin: 50px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	margin: 50px 0;
 }
 
 .about img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #BB9469;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	object-fit: cover;
 }
 
 .about-text {
-    max-width: 600px;
+	background-color: #816a51;
+	padding: 20px;
+	border-radius: 8px;
+	max-width: 600px;
 }
 
 .about-text p {
-    font-size: 1.2em;
-    line-height: 1.5;
-    text-align: justify;
+	font-size: 1.2em;
+	line-height: 1.5;
+	text-align: justify;
 }
 
 .socials {
-    text-align: center;
-    margin: 30px 0;
+	text-align: center;
+	margin: 30px 0;
 }
 
 .socials a {
-    margin: 0 10px;
-    display: inline-block;
+	margin: 0 10px;
+	display: inline-block;
 }
 
 .socials img {
-    width: 100px;
-    transition: transform 0.3s ease;
+	width: 100px;
+	transition: transform 0.3s ease;
 }
 
 .socials img:hover {
-    transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 .projects {
-    margin: 50px 0;
+	margin: 50px 0;
 }
 
 .projects h2 {
-    text-align: center;
-    margin-bottom: 30px;
+	text-align: center;
+	margin-bottom: 30px;
 }
 
 .projects ul {
-    list-style-type: none;
-    padding: 0;
+	list-style-type: none;
+	padding: 0;
 }
 
 .projects li {
-    margin-bottom: 25px;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    color: #f5f5f5;
+	margin-bottom: 25px;
+	background-color: #816a51;
+	padding: 20px;
+	border-radius: 8px;
+	transition: background-color 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .projects li:hover {
-    background-color: #444;
+	background-color: #2e2e2e;
 }
 
 .projects a {
-    color: #DECAAF;
-    text-decoration: none;
-    font-weight: bold;
+	color: #DECAAF;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 .project-description {
-    margin: 10px 0;
-    font-size: 1em;
+	margin: 10px 0;
+	font-size: 1em;
 }
 
 .download-btn {
-    background-color: #BB9469;
-    color: #282c34;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    font-size: 0.9em;
+	background-color: #BB9469;
+	color: #282c34;
+	padding: 8px 16px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+	font-size: 0.9em;
 }
 
 .download-btn:hover {
-    background-color: #D0B084;
+	background-color: #D0B084;
 }
 
 .techs {
-    margin: 50px 0;
-    text-align: center;
+	margin: 50px 0;
+	text-align: center;
 }
 
 .techs h2 {
-    margin-bottom: 20px;
+    color: #f5f5f5;
+	margin-bottom: 20px;
 }
 
 .techs ul {
-    list-style-type: none;
-    padding: 0;
+	list-style-type: none;
+	padding: 0;
 }
 
 .techs li {
-    display: inline-block;
-    margin: 10px;
-    background-color: #333;
-    padding: 10px 20px;
-    border-radius: 5px;
+    color: #f5f5f5;
+	display: inline-block;
+	margin: 10px;
+	background-color: #333;
+	padding: 10px 20px;
+	border-radius: 5px;
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #282c34;
-    color: #f5f5f5;
+	text-align: center;
+	padding: 20px;
+	background-color: #282c34;
+	color: #f5f5f5;
+	position: relative;
+	z-index: 1;
+	width: 100%;
 }
 
 footer a {
-    color: #BB9469;
-    text-decoration: none;
+	color: #BB9469;
+	text-decoration: none;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .about {
-        flex-direction: column;
-        text-align: center;
-    }
+	.about {
+		flex-direction: column;
+		text-align: center;
+	}
 }
 
 @media (min-width: 600px) {
-    .projects li {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+	.projects li {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-    .project-info {
-        flex: 1;
-    }
+	.project-info {
+		flex: 1;
+	}
 
-    .download-btn {
-        margin-left: 20px;
-    }
+	.download-btn {
+		margin-left: 20px;
+	}
 }
