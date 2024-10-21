@@ -234,7 +234,22 @@ footer a {
 	text-decoration: none;
 }
 
-/* Responsividade */
+/* Responsividade para os spans */
+@media (max-width: 768px) {
+	section span {
+		width: calc(8vw - 2px);
+		height: calc(8vw - 2px);
+	}
+}
+
+@media (max-width: 480px) {
+	section span {
+		width: calc(10vw - 2px);
+		height: calc(10vw - 2px);
+	}
+}
+
+/* Responsividade para os outros elementos */
 @media (max-width: 768px) {
 	.about {
 		flex-direction: column;
